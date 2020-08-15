@@ -1,34 +1,21 @@
-<footer>
+<footer class="py-4">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-10 col-lg-offset-1 text-center">
-        <h4><strong>{{ site.owner }}</strong>
-        </h4>
-        <p>
-          {% for address in site.address %}
-          {{ address.line }}<br>
-          {% endfor %}
-        </p>
-        <ul class="list-unstyled">
-          <li><i class="fa fa-phone fa-fw"></i> {{ site.telephone }}</li>
-          <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-          </li>
-        </ul>
-        <br>
-        <ul class="list-inline">
-          <li>
-            <a href="https://facebook.com/{{ site.facebook_username }}"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-          </li>
-          <li>
-            <a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github fa-fw fa-3x"></i></a>
-          </li>
-        </ul>
-        <hr class="small">
-        <p class="text-muted">Copyright &copy; {{ site.copyright }} 20{{ site.time | date: '%y' }}</p>
-      </div>
+    <hr>
+    <div class="row w-100 justify-content-between">
+      <p class="text-muted col col-auto mw-100">
+        Copyright &copy; {{ site.time | date: "%Y" }} - {{ site.author }} -
+        <span class="credit">Powered by <a href="https://jekyllrb.com/">Jekyll</a> & 
+        <a href="https://github.com/mzyy94/jekyll-kieta-theme">Kieta</a></span>
+      </p>
+      <nav class="col col-auto mw-100">
+        <a href="{{ site.baseurl }}/" class="mx-1">All posts</a>
+        <a href="{{ site.baseurl }}/tags" class="mx-1">Tags</a>
+{% if site.data.pages %}
+{% for page in site.data.pages %}
+        <a href="{{ page.url }}" class="mx-1">{{ page.title }}</a>
+{% endfor %}
+{% endif %}
+      </nav>
     </div>
   </div>
 </footer>

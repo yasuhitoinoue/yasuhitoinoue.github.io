@@ -1,28 +1,40 @@
-# Site settings
-title:
-email:
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+title: Kieta
+subtitle: All hope is gone
+author: YOUR_NAME_OR_ID
+twitter:
+  username: YOUR_TWITTER_ID
+disqus: YOUR_DISQUS_SHORTNAME
+branch: master # where your github pages hosted branch
 
-# User setting
-owner:
-email:
-facebook_username:
-twitter_username:
-github_username:
-address:
-  - line:
-  - line:
-  # Feel free to add more lines here 
-telephone:
-copyright:
+permalink: /items/:title
+search_engine: https://www.google.com/search
+paginate: 5
+paginate_path: "/page/:num"
+jekyll-mentions: https://twitter.com
+feed:
+  path: /atom.xml
+sass:
+  style: compressed
 
-# API settings
-google_api_key:
+exclude:
+  - Gemfile
+  - Gemfile.lock
 
-# Build settings
+plugins:
+  - jekyll-avatar
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-mentions
+  - jekyll-sitemap
+  - jekyll-feed
+  - jemoji
+
 markdown: kramdown
+kramdown:
+  auto_ids:       true
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      true
+  footnote_nr:    1
